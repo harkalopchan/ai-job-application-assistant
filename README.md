@@ -8,6 +8,8 @@ AI-powered web application that analyzes a job description and generates useful 
 - Recruiter outreach message
 - Interview preparation questions
 
+![Trading Dashboard](assets/repository-th.png)
+
 This project demonstrates how AI can be integrated into a **Next.js production-style application** using structured output and validation.
 
 ---
