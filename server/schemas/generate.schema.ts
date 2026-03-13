@@ -3,7 +3,7 @@ import { z } from "zod";
 export const generateRequestSchema = z.object({
   jobDescription: z
     .string()
-    .min(50, "Please paste a full and detailed job description.")
+    .min(50, "Please paste a fuller job description.")
     .max(15000, "Job description is too long."),
 });
 

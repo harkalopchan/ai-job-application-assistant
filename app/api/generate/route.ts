@@ -19,7 +19,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           error: "Invalid request body.",
-          details: z.flattenError(parsedBody.error),
+          details: parsedBody.error.flatten(),
         },
         { status: 400 }
       );
@@ -103,7 +103,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           error: "AI response validation failed.",
-          details: z.flattenError(error),
+          details: error.flatten(),
         },
         { status: 500 }
       );

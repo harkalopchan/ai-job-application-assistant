@@ -1,36 +1,183 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Job Application Assistant
 
-## Getting Started
+AI-powered web application that analyzes a job description and generates useful assets for job applications such as:
 
-First, run the development server:
+- Job match score
+- Strengths and skill gaps
+- Tailored cover letter
+- Recruiter outreach message
+- Interview preparation questions
+
+This project demonstrates how AI can be integrated into a **Next.js production-style application** using structured output and validation.
+
+---
+
+## Features
+
+- Analyze job descriptions  
+- Calculate job match score  
+- Identify strengths and missing skills  
+- Generate tailored cover letters  
+- Generate recruiter outreach messages  
+- Generate interview questions  
+- Structured AI output with validation  
+- Clean modular architecture  
+
+---
+
+## Tech Stack
+
+### Frontend
+
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+
+### Backend
+
+- Next.js API Routes
+- Zod validation
+
+### AI Integration
+
+- OpenAI API
+- Structured JSON responses
+
+---
+
+## How It Works
+
+1. User pastes a job description.
+2. The frontend sends the request to `/api/generate`.
+3. The API validates the input using Zod.
+4. The OpenAI API analyzes the job description.
+5. The response is returned as structured JSON.
+6. The UI displays:
+
+- Match score  
+- Strengths  
+- Skill gaps  
+- Cover letter  
+- Recruiter message  
+- Interview questions  
+
+---
+
+## Installation
+
+Clone the repository.
+
+```bash
+git clone https://github.com/harkalopchan/ai-job-application-assistant.git
+cd ai-job-application-assistant
+```
+
+Install dependencies.
+
+```bash
+npm install
+```
+
+---
+
+## Environment Variables
+
+Create a `.env.local` file in the project root.
+
+```env
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL=gpt-4.1-mini
+```
+
+---
+
+## Run the Project
+
+Start the development server.
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the application in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Example Output
 
-To learn more about Next.js, take a look at the following resources:
+### Match Score
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```text
+86%
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Strengths
 
-## Deploy on Vercel
+- Strong React and Next.js experience
+- Deep TypeScript knowledge
+- Experience building scalable dashboards
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Skill Gaps
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Limited AWS infrastructure experience
+- No GraphQL experience mentioned
+
+### Recruiter Message
+
+```text
+Hi [Name],
+
+I came across the Senior Frontend Engineer role at your company.
+With 15+ years of experience building React and Next.js applications,
+the role aligns closely with my background.
+
+I'd love to connect and learn more about the team.
+
+Best regards,
+Harka
+```
+
+---
+
+## Future Improvements
+
+- Resume upload and analysis
+- Job history tracking
+- ATS keyword optimization
+- PDF export for cover letters
+- Authentication and user accounts
+- Job board integration
+
+---
+
+## Security Notes
+
+- OpenAI API keys are stored server-side  
+- All requests are validated  
+- AI responses are schema validated before rendering  
+
+---
+
+## Author
+
+**Harka Man Tamang**
+
+Senior Frontend Engineer  
+React | Next.js | TypeScript  
+
+GitHub  
+https://github.com/harkalopchan  
+
+LinkedIn  
+https://linkedin.com/in/harkalopchan  
+
+---
+
+## License
+
+MIT License

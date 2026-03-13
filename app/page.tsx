@@ -41,34 +41,43 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-zinc-50 px-4 py-10">
-      <div className="mx-auto max-w-6xl space-y-8">
-        <header className="space-y-2">
-          <h1 className="text-3xl font-bold tracking-tight text-zinc-900">
+    <main className="min-h-[calc(100vh-128px)] px-4 py-10">
+      <div className="mx-auto max-w-7xl space-y-10">
+        <header className="space-y-4 text-slate-100">
+          <p className="inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-500/10 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-sky-300">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            AI-Powered
+          </p>
+          <h1 className="bg-gradient-to-r from-sky-400 via-indigo-400 to-purple-400 bg-clip-text text-4xl font-semibold tracking-tight text-transparent md:text-5xl">
             AI Job Application Assistant
           </h1>
-          <p className="max-w-2xl text-sm leading-6 text-zinc-600">
-            Paste a job description to generate a match analysis, cover letter,
-            recruiter message, and interview questions.
+          <p className="max-w-2xl text-sm leading-6 text-slate-300">
+            Paste a job description and instantly generate match analysis, cover letters, recruiter messages, and interview preparation questions.
           </p>
         </header>
 
         <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
-          <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
+          <div className="rounded-2xl border border-slate-800/80 bg-slate-900/70 p-6">
             <JobForm onSubmit={handleGenerate} loading={loading} />
           </div>
 
           <div className="space-y-4">
             {error ? (
-              <div className="rounded-2xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+              <div className="rounded-md border border-red-500/40 bg-red-950/60 p-4 text-sm text-red-200">
                 {error}
               </div>
             ) : null}
 
-            {result ? (
+            {loading ? (
+              <div className="space-y-4">
+                <div className="h-24 animate-pulse rounded-md bg-slate-800/80" />
+                <div className="h-40 animate-pulse rounded-md bg-slate-800/80" />
+                <div className="h-32 animate-pulse rounded-md bg-slate-800/80" />
+              </div>
+            ) : result ? (
               <ResultsView result={result} />
             ) : (
-              <div className="rounded-3xl border border-dashed border-zinc-300 bg-white p-10 text-sm text-zinc-500">
+              <div className="rounded-2xl border border-dashed border-slate-700/80 bg-slate-900/50 p-8 text-sm text-slate-400">
                 Generated results will appear here.
               </div>
             )}

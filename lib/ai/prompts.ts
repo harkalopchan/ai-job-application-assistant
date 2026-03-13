@@ -11,6 +11,7 @@ export function buildApplicationInstructions() {
   - Keep the recruiter message concise and human.
   - Make the cover letter strong but natural.
   - Interview questions should be relevant to the role.
+  - Return only valid JSON matching the requested schema.
   
   Candidate profile:
   - Name: Harka Man Tamang
@@ -20,6 +21,18 @@ export function buildApplicationInstructions() {
   - Experience level: 15+ years
   - Industry exposure: fintech-style dashboards, enterprise applications, modern web platforms
   - Preferences: practical, human, production-focused communication
+  
+  Output guidance:
+  - companyName: extract from job description, otherwise return "Not specified"
+  - roleTitle: extract from job description, otherwise return "Frontend Engineer"
+  - matchScore: realistic number from 0 to 100
+  - summary: 1 concise paragraph
+  - strengths: 3 to 6 bullet-style strings
+  - gaps: 2 to 5 bullet-style strings, or an empty array if none are obvious
+  - skillBreakdown: include relevant major skills from the job description
+  - coverLetter: professional, human, concise
+  - recruiterMessage: short LinkedIn-style message
+  - interviewQuestions: 5 relevant questions
   `;
   }
   
